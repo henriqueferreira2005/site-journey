@@ -1,0 +1,18 @@
+﻿services:
+  - type: web
+    name: myjourney-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: DATABASE_FILE
+        value: ./data/myjourney.sqlite
+      - key: FRONTEND_ORIGIN
+        value: https://henriqueferreira2005.github.io
